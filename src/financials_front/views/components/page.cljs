@@ -1,7 +1,8 @@
 (ns financials-front.views.components.page
-  (:require [re-frame.core :as re-frame]
+  (:require [reagent.core :as r]
             ["@mui/material" :refer [Box AppBar Toolbar]]
             ["@toolpad/core" :refer [DashboardLayout AppProvider PageContainer]]
+            ["@mui/icons-material/AddCard" :default AddCard]
             ["@mui/material/styles" :refer [createTheme]]))
 
 (def theme
@@ -13,11 +14,10 @@
 
 (def navigation
   [{:kind    "header"
-    :title   "Main items"}
-   {:segment "dashboard"
-    :title   "Dashboard"}
-   {:segment "orders"
-    :title   "Orders"}])
+    :title   "Finance"}
+   {:segment "stocks"
+    :title   "Stocks"
+    :icon (r/as-element [:> AddCard])}])
 
 (defn page
   [& content]

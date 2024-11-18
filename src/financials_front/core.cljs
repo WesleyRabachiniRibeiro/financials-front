@@ -1,24 +1,19 @@
 (ns financials-front.core
   (:require
-   [reagent.dom :as rdom]
-   [re-frame.core :as rf]
-   [financials-front.events-subs :as events]
-   [financials-front.views.pages.core.main :as main]
-   [financials-front.config :as config]
-   ))
+    [financials-front.routes :as routes]
+    [reagent.dom :as dom]
+    [re-frame.core :as rf]
+    [financials-front.events-subs :as events]
+    [financials-front.views.pages.core.displays.main :as displays.main]
+    [financials-front.config :as config]))
 
 
-(defn dev-setup []
-  (when config/debug?
-    (println "dev mode")))
-
-(defn ^:dev/after-load mount-root []
+(defn ^:after-load initialize-app! []
   (rf/clear-subscription-cache!)
-  (let [root-el (.getElementById js/document "app")]
-    (rdom/unmount-component-at-node root-el)
-    (rdom/render [main/main-panel] root-el)))
+  (dom/render [displays.main/main-panel]
+             (.getElementById js/document (:app-name config/config))))
 
 (defn init []
   (rf/dispatch-sync [::events/initialize-db])
-  (dev-setup)
-  (mount-root))
+  (routes/init-routes!)
+  (initialize-app!))

@@ -1,4 +1,6 @@
-(ns financials-front.config)
+(ns financials-front.config
+  (:require [financials-front.routes :as routes]))
 
-(def debug?
-  ^boolean goog.DEBUG)
+(def config
+  {:app-name "financials"
+   :routes routes/all})
