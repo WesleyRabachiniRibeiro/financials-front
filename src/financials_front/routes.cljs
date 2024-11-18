@@ -22,4 +22,4 @@
   (rfe/start!
     router
     on-navigate
-    {:use-fragment true}))
+    {:use-fragment false}))

@@ -15,6 +15,11 @@
   (fn [db]
       (:name db)))
 
+(rf/reg-sub
+  ::current-route
+  (fn [db]
+    (:current-route db)))
+
 (rf/reg-event-fx
   ::navigate
   (fn [_ [_ & route]]
