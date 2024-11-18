@@ -1,11 +1,11 @@
 (ns financials-front.routes
   (:require
-    [re-frame.core :as rf]
-    [reitit.frontend :as rfr]
-    [financials-front.events-subs :as events]
-    [financials-front.views.pages.core.routes :as core.routes]
-    [financials-front.views.pages.stocks.routes :as stocks.routes]
-    [reitit.frontend.easy :as rfe]))
+   [financials-front.events-subs :as events]
+   [financials-front.views.pages.core.routes :as core.routes]
+   [financials-front.views.pages.stocks.routes :as stocks.routes]
+   [re-frame.core :as rf]
+   [reitit.frontend :as rfr]
+   [reitit.frontend.easy :as rfe]))
 
 (def all
   (concat core.routes/routes
@@ -20,6 +20,6 @@
 
 (defn init-routes! []
   (rfe/start!
-    router
-    on-navigate
-    {:use-fragment false}))
+   router
+   on-navigate
+   {:use-fragment false}))
