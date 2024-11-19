@@ -6,5 +6,4 @@
 (defn main-panel
   []
   [page/page
-   [:a {:href (rfe/href :routes/stocks)} "Stock List"]
-   [:p "Hello World"]])
+   ])
