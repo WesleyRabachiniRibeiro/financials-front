@@ -1,13 +1,12 @@
-(ns financials-front.views.components.breadcrumb
+(ns financials-front.components.breadcrumb
   (:require
-    ["@mui/material/Breadcrumbs" :default Breadcrumbs]
-    ["@mui/material/Link" :default Link]
-    [schema.core :as s]))
+   ["@mui/material/Breadcrumbs" :default Breadcrumbs]
+   ["@mui/material/Link" :default Link]
+   [schema.core :as s]))
 
 (s/defschema breadcrumbProp
   {:name  s/Str
    :route s/Str})
-
 
 (s/defn breadcrumb [breadcrumbProp :- breadcrumbProp]
   [:> Breadcrumbs {:aria-label "breadcrumb"

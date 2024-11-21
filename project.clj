@@ -11,6 +11,7 @@
                  [re-frame "1.4.2"]
                  [cljs-ajax "0.8.4"]
                  [day8.re-frame/http-fx "0.2.1"]
+                 [cljsjs/chartjs "3.9.1-0"]
                  [metosin/reitit "0.7.2"]
                  [binaryage/devtools "1.0.6"]]
 

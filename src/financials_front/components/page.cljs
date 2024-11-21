@@ -1,4 +1,4 @@
-(ns financials-front.views.components.page
+(ns financials-front.components.page
   (:require
    ["@mui/icons-material/AddCard" :default AddCard]
    ["@mui/material/styles" :refer [createTheme]]
@@ -23,7 +23,8 @@
   [& content]
   [:> AppProvider {:theme    theme
                    :navigation navigation
-                   :branding {:title "Financials"}}
+                   :branding {:title "Financials"
+                              :logo (r/as-element [:img {:src "/img/logo.png" :alt "Financials"}])}}
    [:> DashboardLayout {:sx {:flex-grow 1}}
     [:> PageContainer
      (if (seq (rest content))
